@@ -104,6 +104,8 @@ Every pass starts from @ultimate's handoff in its brief, then reads with codemod
 `ultimate.search`, `ultimate.conversations`, `ultimate.trace`), `memory`, `git log` and the code. Every claim cites
 `#conversation/entry`, a trace error, a commit or `path:line`. Conversation summaries and abstracts (in the root's
 tally, `ultimate.entries(<root>)`) are the cheap way in; open a conversation only where they point at something.
+Reduce inside the script before `store()`: counts, ids and short excerpts, never whole entries, traces or
+histories, which overflow its limit; query again rather than store raw results.
 
 - **memory** — distil the project memory: memories that are outdated, contradicted, duplicated or too vague; lessons
   that later conversations taught but nobody remembered. Output add/update/delete ops, each with reason and evidence
